@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #f86011;
+  --black: black;
+  --white: #fff;
+  --new-blue: #0697df;
+}
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.btn {
+  @apply px-4 py-2 rounded-md font-medium transition-all duration-200 ease-in-out;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:opacity-90;
+}
+
+.btn-blue {
+  @apply bg-new-blue text-white hover:opacity-90;
+}
+
+.input-field {
+  @apply bg-gray-800 text-white rounded-md px-4 py-2 w-full border border-gray-700 focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+.form-group {
+  @apply mb-4;
+}
+
+.form-label {
+  @apply block mb-2 text-sm font-medium;
+}
+
+.error-text {
+  @apply text-red-500 text-sm mt-1;
+}
+
+.card {
+  @apply bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-xl transition-all duration-200;
+}
