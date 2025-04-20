@@ -22,7 +22,7 @@ export const useAuthStore = defineStore("auth", {
         localStorage.setItem("token", response.token);
         return response;
       } catch (error) {
-        this.error = error instanceof Error ? error.message : "Login failed";
+        this.error = error instanceof Error ? error.message : "Falha no login";
         throw error;
       } finally {
         this.loading = false;
