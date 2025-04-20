@@ -31,7 +31,7 @@ export const login = async (
   credentials: LoginCredentials
 ): Promise<AuthResponse> => {
   try {
-    const response: AxiosResponse<AuthResponse> = await api.post(
+    const response = await api.post<AuthResponse>(
       "/api/auth/login",
       credentials
     );
