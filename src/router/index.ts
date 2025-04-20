@@ -3,6 +3,7 @@ import Login from "../pages/Login.vue";
 import Register from "../pages/Register.vue";
 import Dashboard from "../pages/Dashboard.vue";
 import Translators from "../pages/Translators.vue";
+import Documents from "../pages/Documents.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -31,6 +32,12 @@ const router = createRouter({
       path: "/translators",
       name: "translators",
       component: Translators,
+      meta: { requiresAuth: true },
+    },
+    {
+      path: "/documents",
+      name: "documents",
+      component: Documents,
       meta: { requiresAuth: true },
     },
   ],

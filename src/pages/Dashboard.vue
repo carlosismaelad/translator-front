@@ -13,6 +13,9 @@
           <AppButton variant="secondary" @click="router.push('/translators')">
             Tradutores
           </AppButton>
+          <AppButton variant="secondary" @click="router.push('/documents')">
+            CSV Upload
+          </AppButton>
           <AppButton variant="secondary" @click="handleLogout">
             Sair
           </AppButton>
