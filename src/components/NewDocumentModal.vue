@@ -140,6 +140,8 @@ import AppInput from "./common/AppInput.vue";
 import AppButton from "./common/AppButton.vue";
 import { languages, type Language } from "../constants/languages-list";
 
+const emit = defineEmits(["document-created", "close"]);
+
 const form = ref({
   subject: "",
   content: "",
@@ -227,7 +229,6 @@ const handleSubmit = async () => {
     sourceLanguageSearch.value = "";
     targetLanguageSearch.value = "";
 
-    // Emit events and close modal
     emit("document-created");
     emit("close");
   } catch (err) {
