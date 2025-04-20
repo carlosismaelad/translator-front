@@ -18,13 +18,13 @@
 import { computed } from "vue";
 
 const props = defineProps<{
-  label: string;
+  label?: string;
   modelValue: string;
   type?: string;
   placeholder?: string;
   error?: string;
   required?: boolean;
-  name: string;
+  name?: string;
 }>();
 
 const id = computed(() => `input-${props.name}`);

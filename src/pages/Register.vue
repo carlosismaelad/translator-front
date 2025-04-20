@@ -12,7 +12,7 @@
             label="Name"
             name="name"
             v-model="formData.name"
-            placeholder="Enter your name"
+            placeholder="Nome"
             :error="errors.name"
           />
 
@@ -20,7 +20,7 @@
             label="Email"
             name="email"
             v-model="formData.email"
-            placeholder="Enter your email"
+            placeholder="use um e-mail fake: fake@mail.com"
             :error="errors.email"
           />
 
@@ -29,7 +29,7 @@
             name="password"
             type="password"
             v-model="formData.password"
-            placeholder="Enter your password"
+            placeholder="Informe uma senha"
             :error="errors.password"
           />
 
@@ -38,7 +38,7 @@
             name="confirmPassword"
             type="password"
             v-model="formData.confirmPassword"
-            placeholder="Confirm your password"
+            placeholder="Confirme sua senha"
             :error="errors.confirmPassword"
           />
 
@@ -109,7 +109,7 @@ const handleSubmit = async () => {
 
   if (formData.value.password !== formData.value.confirmPassword) {
     notification.value = {
-      message: "Passwords do not match",
+      message: "Senha e confirmação de senha não coincidem",
       isSuccess: false,
     };
     return;
@@ -145,14 +145,12 @@ const handleSubmit = async () => {
         router.push("/login");
       }, 4000);
     } else {
-      throw new Error(data.message || "Registration failed");
+      throw new Error(data.message || "Falha ao registrar");
     }
   } catch (err) {
     notification.value = {
       message:
-        err instanceof Error
-          ? err.message
-          : "An error occurred during registration",
+        err instanceof Error ? err.message : "Ocorreu um erro ao registrar",
       isSuccess: false,
     };
   } finally {
