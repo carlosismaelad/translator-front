@@ -31,10 +31,7 @@ export const login = async (
   credentials: LoginCredentials
 ): Promise<AuthResponse> => {
   try {
-    const response = await api.post<AuthResponse>(
-      "/api/auth/login",
-      credentials
-    );
+    const response = await api.post<AuthResponse>("/auth/login", credentials);
     return response.data;
   } catch (error) {
     throw new Error("Falha no login");
