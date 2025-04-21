@@ -5,7 +5,6 @@ import type {
   AuthResponse,
 } from "../types/auth";
 import type { Document } from "../types/document";
-import { AxiosResponse } from "axios";
 
 const API_URL = "https://translator-api-9gyp.onrender.com/api";
 
@@ -30,12 +29,8 @@ api.interceptors.request.use(
 export const login = async (
   credentials: LoginCredentials
 ): Promise<AuthResponse> => {
-  try {
-    const response = await api.post<AuthResponse>("/auth/login", credentials);
-    return response.data;
-  } catch (error) {
-    throw new Error("Falha no login");
-  }
+  const response = await api.post<AuthResponse>("/auth/login", credentials);
+  return response.data;
 };
 
 export const register = async (
